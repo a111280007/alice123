@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 10s linear infinite;
+      color: #202f47;
+      font-size: 1rem;
+    }
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to   { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee-container">
+    <div class="marquee-text">
+      傾心打造 &ensp; * &ensp; 專屬於你 &ensp; * &ensp; 傾心打造 &ensp; * &ensp; 專屬於你 &ensp; * &ensp;
+    </div>
+  </div>
+</body>
+</html>
