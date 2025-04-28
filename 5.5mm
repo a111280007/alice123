@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5.5mm Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f7f7f7;
+    }
+    .container {
+      width: 98%;
+      margin: 0 auto;
+      padding: 5px 0;
+      border-bottom: 5px solid #ccc;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .value {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+    .dimensions {
+      font-size: 14px;
+      color: #666;
+      margin-top: 4px;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="value">5.5mm</div>
+    <div class="dimensions">(1220 × 230 × 5.5mm)</div>
+  </div>
+</body>
+</html>
