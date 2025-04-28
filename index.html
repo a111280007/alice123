@@ -8,23 +8,25 @@
       width: 100%;
       overflow: hidden;
       box-sizing: border-box;
+      background: #fff;
     }
-    .marquee-text {
+    .marquee-content {
       display: inline-block;
-      white-space: nowrap;
+      padding-left: 100%; /* 一開始整個推到螢幕外 */
       animation: marquee 10s linear infinite;
+      white-space: nowrap;
       color: #202f47;
       font-size: 1rem;
     }
     @keyframes marquee {
-      from { transform: translateX(100%); }
-      to   { transform: translateX(-100%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
 <body>
   <div class="marquee-container">
-    <div class="marquee-text">
+    <div class="marquee-content">
       傾心打造 &ensp; * &ensp; 專屬於你 &ensp; * &ensp; 傾心打造 &ensp; * &ensp; 專屬於你 &ensp; * &ensp;
     </div>
   </div>
