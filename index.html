@@ -3,30 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marquee Example</title>
   <style>
     .marquee-container {
       width: 100%;
       overflow: hidden;
-      background: #eff0ef; /* 背景色已修改 */
+      background: #eff0ef;
       position: relative;
     }
 
     .marquee-track {
       display: inline-block;
       white-space: nowrap;
+      /* 初始設定為暫停，等 JS 啟動後再開始動畫 */
       animation: marquee 30s linear infinite;
+      animation-delay: 0s;
+      animation-play-state: paused;
+      will-change: transform;
     }
 
     .marquee-text {
       display: inline-block;
       color: #202f47;
       font-size: 1rem;
-      padding-right: 50px; /* 控制文字間距 */
+      padding-right: 50px;
     }
 
     @keyframes marquee {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
   </style>
 </head>
@@ -41,5 +50,14 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // 等 DOM 內容載入完成後啟動動畫，確保寬度計算無誤
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('.marquee-track');
+      // 啟動動畫
+      track.style.animationPlayState = 'running';
+    });
+  </script>
 </body>
 </html>
