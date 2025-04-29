@@ -8,23 +8,25 @@
       width: 100%;
       overflow: hidden;
       background: #fff;
-      box-sizing: border-box;
       position: relative;
     }
+
     .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marquee 20s linear infinite;
-    }
-    .marquee-text {
+      display: inline-block;
       white-space: nowrap;
+      animation: marquee 10s linear infinite;
+    }
+
+    .marquee-text {
+      display: inline-block;
       color: #202f47;
       font-size: 1rem;
-      padding-right: 50px; /* 文字之間的間距 */
+      padding-right: 50px; /* 控制文字間距 */
     }
+
     @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
