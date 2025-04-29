@@ -1,42 +1,32 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marquee Example</title>
   <style>
     .marquee-container {
       width: 100%;
       overflow: hidden;
-      background: #eff0ef;
+      background: #eff0ef; /* 背景色已修改 */
       position: relative;
-      height: 2rem; /* 固定高度，避免重新計算佈局 */
     }
 
     .marquee-track {
-      position: absolute;
+      display: inline-block;
       white-space: nowrap;
-      will-change: transform;
-      animation: marquee 30s linear infinite;
-      animation-delay: 0s;
-      /* 預設從暫停改為Running，確保立即啟動 */
-      animation-play-state: running;
+      animation: marquee 20s linear infinite;
     }
 
     .marquee-text {
       display: inline-block;
       color: #202f47;
       font-size: 1rem;
-      padding-right: 50px;
+      padding-right: 50px; /* 控制文字間距 */
     }
 
     @keyframes marquee {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
@@ -51,16 +41,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // 立即強制計算佈局後於下一個動畫幀啟動，減少延遲
-    const track = document.querySelector('.marquee-track');
-    // 強制瀏覽器計算佈局
-    void track.offsetWidth;
-    // 在下一個動畫幀啟動動畫
-    requestAnimationFrame(() => {
-      track.style.animationPlayState = 'running';
-    });
-  </script>
 </body>
 </html>
