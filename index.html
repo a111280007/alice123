@@ -10,16 +10,17 @@
       overflow: hidden;
       background: #eff0ef;
       position: relative;
+      height: 2rem; /* 固定高度，避免重新計算佈局 */
     }
 
     .marquee-track {
-      display: inline-block;
+      position: absolute;
       white-space: nowrap;
-      /* 初始設定為暫停，等 JS 啟動後再開始動畫 */
+      will-change: transform;
       animation: marquee 30s linear infinite;
       animation-delay: 0s;
-      animation-play-state: paused;
-      will-change: transform;
+      /* 預設從暫停改為Running，確保立即啟動 */
+      animation-play-state: running;
     }
 
     .marquee-text {
@@ -52,10 +53,12 @@
   </div>
 
   <script>
-    // 等 DOM 內容載入完成後啟動動畫，確保寬度計算無誤
-    document.addEventListener('DOMContentLoaded', () => {
-      const track = document.querySelector('.marquee-track');
-      // 啟動動畫
+    // 立即強制計算佈局後於下一個動畫幀啟動，減少延遲
+    const track = document.querySelector('.marquee-track');
+    // 強制瀏覽器計算佈局
+    void track.offsetWidth;
+    // 在下一個動畫幀啟動動畫
+    requestAnimationFrame(() => {
       track.style.animationPlayState = 'running';
     });
   </script>
