@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+
   <style>
     .marquee-container {
-  width: 100%;
-  overflow: hidden;
-  background: transparent; /* 背景改為透明 */
-  position: relative;
-}
+      width: 100%;
+      overflow: hidden;
+      background: transparent !important;
+      position: relative;
+    }
+
     .marquee-track {
       display: inline-block;
       white-space: nowrap;
@@ -18,9 +22,11 @@
 
     .marquee-text {
       display: inline-block;
-      color: #202f47;
-      font-size: 1rem;
-      padding-right: 50px; /* 控制文字間距 */
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #ffffff; /* 白色字體 */
+      font-size: 1.25rem; /* 稍大 */
+      padding-right: 50px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* 加陰影讓字更清楚 */
     }
 
     @keyframes marquee {
